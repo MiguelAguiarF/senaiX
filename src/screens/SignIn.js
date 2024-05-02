@@ -39,7 +39,7 @@ export default function SignIn() {
 const style = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "flex-start",
+    alignItems: "stretch",
     justifyContent: "space-between",
     padding: 16,
   },
