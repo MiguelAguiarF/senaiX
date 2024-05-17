@@ -17,18 +17,21 @@ export default function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const {signIn} = useAuth();
+  const { signIn } = useAuth();
 
-  async function handleSubmit(){
-    try{
-      setError("")
-      await signIn({email, password})
-    }
-    catch (error) {
-      if(error.response && error.response.data && error.response.data.message){
+  async function handleSubmit() {
+    try {
+      setError("");
+      await signIn({ email, password });
+    } catch (error) {
+      if (
+        error.response &&
+        error.response.data &&
+        error.response.data.message
+      ) {
         setError(error.response.data.message);
-      } else{
-        setError("Falha");
+      } else {
+        setError("Falha no login. Verifique suas credenciais.");
       }
     }
   }
@@ -68,7 +71,11 @@ export default function SignIn() {
           />
         </View>
         {error && <Text>{error}</Text>}
-        <MyButton onPress={handleSubmit} text="Login" style={{ width: "100%" }} />
+        <MyButton
+          onPress={handleSubmit}
+          text="Login"
+          style={{ width: "100%" }}
+        />
       </View>
     </View>
   );

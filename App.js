@@ -6,7 +6,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <AppProvider>
-      <Routes />
+        <Routes />
       </AppProvider>
     </NavigationContainer>
   );
